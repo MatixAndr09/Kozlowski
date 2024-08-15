@@ -1,5 +1,7 @@
 # By MatixAndr09
+cmake-build-debug/
 .idea/
+test.cpp
 
 # Prerequisites
 *.d
