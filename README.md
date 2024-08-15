@@ -20,4 +20,4 @@ Kozłowski is a advanced stealer writen in C++. Currently made only for Windows 
 
 **TOOL WORK IN PROGRESS**
 
-~~This tool is single use only. It uses a discord webhook and then impolodes itself after stealing information. (That means the webhook will be deleted)
+> This tool is single use only. It uses a discord webhook and then impolodes itself after stealing information. (That means the webhook will be deleted)
