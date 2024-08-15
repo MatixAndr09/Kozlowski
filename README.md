@@ -1,8 +1,6 @@
-<img src="Kozłowski.png" alt="logo" align="center">
+<p align="center"><img src="Kozłowski.png" alt="logo"></p>
 
-# Kozłowski Stealer
 Kozłowski is a advanced stealer writen in C++. Currently made only for Windows 11
-
 
 > [!CAUTION]
 > ***This is a malware***. It's against the law to use it on people without their consent. I'am not responsible for any damage did by this tool. Use it at your own risk.
