@@ -75,7 +75,7 @@ MORE IDEAS:
  */
 
 string status = "Beta";
-double version = 0.1;
+string version = "0.0.3";
 
 unordered_map<string, vector<string>> known_browser_paths = {
     {
