@@ -1,4 +1,4 @@
-<p align="center"><img src="Kozłowski.png" alt="logo"></p>
+<p align="center"><img src="images/Kozłowski.png" alt="logo"></p>
 
 <p align="center">
   <img alt="Ver" src="https://img.shields.io/badge/C%2B%2B_Version-17-blue?style=flat?color=blue">
