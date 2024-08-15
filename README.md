@@ -4,6 +4,7 @@
   <img alt="Ver" src="https://img.shields.io/badge/C%2B%2B_Version-17-blue?style=flat?color=blue">
   <img alt="GitHub License" src="https://img.shields.io/github/license/MatixAndr09/Kozlowski?color=blue">
   <img alt="Static Badge" src="https://img.shields.io/badge/App_Version-0.0.3-blue">
+  <img alt="Status" src="https://github.com/MatixAndr09/Kozlowski/actions/workflows/cmake-single-platform.yml/badge.svg?branch=main">
 </p>
 
 ---
