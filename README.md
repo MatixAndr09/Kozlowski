@@ -6,6 +6,8 @@
   <img alt="Static Badge" src="https://img.shields.io/badge/App_Version-0.0.3-blue">
 </p>
 
+</br>
+
 Kozłowski is a advanced stealer writen in C++. Currently made only for Windows 11
 
 > [!CAUTION]
