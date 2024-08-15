@@ -1,5 +1,5 @@
 <p align="center"><img src="Kozłowski.png" alt="logo"></p>
-![![CMake on multiple platforms](https://github.com/MatixAndr09/Kozlowski/actions/workflows/cmake-multi-platform.yml/badge.svg?branch=main)](https://github.com/MatixAndr09/Kozlowski/actions/workflows/cmake-multi-platform.yml)]
+![CMake on multiple platforms](https://github.com/MatixAndr09/Kozlowski/actions/workflows/cmake-multi-platform.yml/badge.svg?branch=main)](https://github.com/MatixAndr09/Kozlowski/actions/workflows/cmake-multi-platform.yml)
 
 Kozłowski is a advanced stealer writen in C++. Currently made only for Windows 11
 
