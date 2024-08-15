@@ -111,7 +111,51 @@ unordered_map<string, vector<string>> known_browser_paths = {
             R"(%APPDATA%\Opera Software\Opera Neon\User Data\Default\History)",
             R"(%APPDATA%\Opera Software\Opera Neon\User Data\Default\Login Data)",
             R"(%APPDATA%\Opera Software\Opera Neon\User Data\Default\Network\Cookies)",
-    }},
+        }
+    },
+    {
+        "Edge", {
+            R"(%LOCALAPPDATA%\Microsoft\Edge\User Data\Default\History)",
+            R"(%LOCALAPPDATA%\Microsoft\Edge\User Data\Default\Login Data)",
+            R"(%LOCALAPPDATA%\Microsoft\Edge\User Data\Default\Network\Cookies)"
+        }
+    },
+    {
+        "Brave", {
+            R"(%LOCALAPPDATA%\BraveSoftware\Brave-Browser\User Data\Default\History)",
+            R"(%LOCALAPPDATA%\BraveSoftware\Brave-Browser\User Data\Default\Login Data)",
+            R"(%LOCALAPPDATA%\BraveSoftware\Brave-Browser\User Data\Default\Network\Cookies)"
+        }
+    },
+    {
+        "Vivaldi", {
+            R"(%LOCALAPPDATA%\Vivaldi\User Data\Default\History)",
+            R"(%LOCALAPPDATA%\Vivaldi\User Data\Default\Login Data)",
+            R"(%LOCALAPPDATA%\Vivaldi\User Data\Default\Network\Cookies)"
+        }
+    },
+    {
+        "Yandex", {
+            R"(%LOCALAPPDATA%\Yandex\YandexBrowser\User Data\Default\History)",
+            R"(%LOCALAPPDATA%\Yandex\YandexBrowser\User Data\Default\Login Data)",
+            R"(%LOCALAPPDATA%\Yandex\YandexBrowser\User Data\Default\Network\Cookies)",
+            R"(%LOCALAPPDATA%\Yandex\YandexBrowserCanary\User Data\Default\History)",
+            R"(%LOCALAPPDATA%\Yandex\YandexBrowserCanary\User Data\Default\Login Data)",
+            R"(%LOCALAPPDATA%\Yandex\YandexBrowserCanary\User Data\Default\Network\Cookies)",
+            R"(%LOCALAPPDATA%\Yandex\YandexBrowserDeveloper\User Data\Default\History)",
+            R"(%LOCALAPPDATA%\Yandex\YandexBrowserDeveloper\User Data\Default\Login Data)",
+            R"(%LOCALAPPDATA%\Yandex\YandexBrowserDeveloper\User Data\Default\Network\Cookies)",
+            R"(%LOCALAPPDATA%\Yandex\YandexBrowserBeta\User Data\Default\History)",
+            R"(%LOCALAPPDATA%\Yandex\YandexBrowserBeta\User Data\Default\Login Data)",
+            R"(%LOCALAPPDATA%\Yandex\YandexBrowserBeta\User Data\Default\Network\Cookies)",
+            R"(%LOCALAPPDATA%\Yandex\YandexBrowserTech\User Data\Default\History)",
+            R"(%LOCALAPPDATA%\Yandex\YandexBrowserTech\User Data\Default\Login Data)",
+            R"(%LOCALAPPDATA%\Yandex\YandexBrowserTech\User Data\Default\Network\Cookies)",
+            R"(%LOCALAPPDATA%\Yandex\YandexBrowserSxS\User Data\Default\History)",
+            R"(%LOCALAPPDATA%\Yandex\YandexBrowserSxS\User Data\Default\Login Data)",
+            R"(%LOCALAPPDATA%\Yandex\YandexBrowserSxS\User Data\Default\Network\Cookies)",
+        }
+    }
 };
 
 enum Browsers {
@@ -119,7 +163,8 @@ enum Browsers {
     Opera,
     Edge,
     Brave,
-    Firefox,
+    Vivaldi,
+    Yandex
 };
 
 bool fileExists(const string& filePath) {
@@ -136,10 +181,15 @@ string expandEnvironmentVariables(const string& path) {
 void checkBrowserPaths(const string& browserName) {
     for (const string& path : known_browser_paths[browserName]) {
         string expandedPath = expandEnvironmentVariables(path);
+
+        const char* red = "\033[31m";
+        const char* green = "\033[32m";
+        const char* reset = "\033[0m";
+
         if (fileExists(expandedPath)) {
-            cout << "OK | File exists: " << expandedPath << endl;
+            cout << green << "OK " << reset << "| File exists: " << expandedPath << endl;
         } else {
-            cout << "NOT FOUND | File does not exist: " << expandedPath << endl;
+            cout << red << "NOT FOUND " << reset << "| File does not exist: " << expandedPath << endl;
         }
     }
 }
