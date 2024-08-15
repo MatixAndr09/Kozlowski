@@ -1,6 +1,7 @@
 # By MatixAndr09
 cmake-build-debug/
 .idea/
+.vs\
 test.cpp
 
 # Prerequisites
