@@ -2,7 +2,6 @@
 cmake-build-debug/
 .idea/
 .vs\
-test.cpp
 
 # Prerequisites
 *.d

@@ -75,7 +75,7 @@ MORE IDEAS:
  */
 
 string status = "Beta";
-string version = "0.0.3";
+string version = "0.0.7";
 
 unordered_map<string, vector<string>> known_browser_paths = {
     {
@@ -204,7 +204,6 @@ void LocateBrowsers() {
 }
 
 int main() {
-    cout << "hi!" << endl;
      LocateBrowsers();
     return 0;
 }
